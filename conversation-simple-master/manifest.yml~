@@ -1,0 +1,20 @@
+---
+declared-services:
+  Conversation-ea:
+    label: conversation
+    plan: free
+applications:
+- name: encuesta-conversation
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - Conversation-ea
+  - Cloudant NoSQL DB-wy
+  env:
+    NPM_CONFIG_PRODUCTION: false
+    WORKSPACE_ID: c05c56ce-d553-42b7-a6c5-560fba0cd114
+    CONVERSATION_USERNAME: 203edbe9-c96e-4b3e-a16b-6f2236f11342
+    CONVERSATION_PASSWORD: bNpFMTqOlexf
+    CLOUDANT_URL: https://1594150b-d199-4fca-8698-5730c81822ee-bluemix:d75eacfb0631e56baec8833d178b7a881240e3178d58b1d61897abd1af8aedd4@1594150b-d199-4fca-8698-5730c81822ee-bluemix.cloudant.com
